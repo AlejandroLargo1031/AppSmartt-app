@@ -31,6 +31,21 @@ AppSmartt-app/
 
 ### Configuración
 
+### Ngnix
+
+### Configuración Nginx
+
+1. Instalar Nginx: `sudo apt install nginx`
+2. Crear archivo `/etc/nginx/sites-available/appsmartt` con:
+   - React (frontend) en `/var/www/appsmartt/frontend/dist`
+   - API (backend) en `http://127.0.0.1:3001`
+3. Activar config:  
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/appsmartt /etc/nginx/sites-enabled/
+   sudo nginx -t
+   sudo systemctl reload nginx
+
+
 1. Instalar dependencias:
 ```bash
 cd backend
