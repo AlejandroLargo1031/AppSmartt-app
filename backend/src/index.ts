@@ -1,5 +1,13 @@
 import { app } from './app';
 import { AppDataSource } from './config/data-source';
+import cors from "cors";
+
+app.use(cors({
+  origin: ["http://localhost:5173", "https://appsmartt-app.onrender.com/api"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
 
 const PORT = Number(process.env.PORT || 4000);
 
